@@ -18,11 +18,11 @@ Package manager: npm (`package-lock.json`), Node >=24. AGENTS.md restricts which
 ## Architecture
 
 Next.js 16 App Router + Tailwind v4 + next-intl. Single-page personal profile site (Bryan Rinaldo). `DESIGN.md` holds the design-token spec; tokens live in `src/styles/global.css` `@theme`. Profile data in `src/utils/Profile.ts`; page sections in `src/components/profile/`. Scroll parallax/reveal is CSS-only (`animation-timeline`) in `global.css`.
-- **Request pipeline is [src/proxy.ts](src/proxy.ts)** (Next 16 name for middleware): Arcjet bot detection (only if `ARCJET_KEY` set; read via `process.env` on purpose) then next-intl routing.
-- **Routes**: only `src/app/[locale]/(marketing)/page.tsx`. Clerk/Drizzle libs (`src/libs/DB.ts`, `src/models/Schema.ts`) remain but are unused by pages.
-- **i18n**: English only; locales in [src/utils/AppConfig.ts](src/utils/AppConfig.ts), messages in `src/locales/en.json`.
+- **Static export** (`output: 'export'` in `next.config.ts`) deployed to GitHub Pages by `.github/workflows/deploy.yml`. No middleware, no server routes; `next start` does not work, serve `out/` instead.
+- **Routes**: only `src/app/(marketing)/page.tsx`. Clerk/Drizzle libs (`src/libs/DB.ts`, `src/models/Schema.ts`) remain but are unused by pages.
+- **i18n**: next-intl without routing; locale fixed to `en` in [src/libs/I18n.ts](src/libs/I18n.ts), messages in `src/locales/en.json`.
 - **DB**: schema in `src/models/Schema.ts`; connection factory in `src/utils/DBConnection.ts`; `src/libs/DB.ts` caches instance on `globalThis` in dev to survive hot reload. PGlite locally, Postgres (e.g. Neon) in prod.
-- **Env**: all vars declared/validated in `src/libs/Env.ts` (t3-env). Never use `process.env` directly (except proxy.ts).
+- **Env**: all vars declared/validated in `src/libs/Env.ts` (t3-env). Never use `process.env` directly.
 - `src/libs/` = third-party setup wrappers (Arcjet, DB, Env, I18n, Logger). `src/utils/` = pure helpers/config.
 - Sentry wired via `src/instrumentation.ts` / `instrumentation-client.ts`; logging via LogTape (`src/libs/Logger.ts`).
 

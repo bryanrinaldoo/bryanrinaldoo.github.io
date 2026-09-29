@@ -1,9 +1,7 @@
 import type { Metadata, Viewport } from 'next';
-import { hasLocale, NextIntlClientProvider } from 'next-intl';
-import { setRequestLocale } from 'next-intl/server';
+import { NextIntlClientProvider } from 'next-intl';
 import { Inter, JetBrains_Mono } from 'next/font/google';
-import { notFound } from 'next/navigation';
-import { routing } from '@/libs/I18nRouting';
+import { AppConfig } from '@/utils/AppConfig';
 import '@/styles/global.css';
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
@@ -39,24 +37,9 @@ export const viewport: Viewport = {
   initialScale: 1,
 };
 
-export function generateStaticParams() {
-  return routing.locales.map((locale) => ({ locale }));
-}
-
-export default async function RootLayout(props: {
-  children: React.ReactNode;
-  params: Promise<{ locale: string }>;
-}) {
-  const { locale } = await props.params;
-
-  if (!hasLocale(routing.locales, locale)) {
-    notFound();
-  }
-
-  setRequestLocale(locale);
-
+export default function RootLayout(props: { children: React.ReactNode }) {
   return (
-    <html lang={locale}>
+    <html lang={AppConfig.i18n.defaultLocale}>
       <body
         className={`${inter.variable} ${jetbrainsMono.variable} bg-white font-sans text-body antialiased`}
       >

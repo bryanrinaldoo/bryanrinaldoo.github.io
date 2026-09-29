@@ -5,6 +5,8 @@ import createNextIntlPlugin from 'next-intl/plugin';
 
 // Define the base Next.js configuration
 const baseConfig: NextConfig = {
+  // Static HTML export for GitHub Pages
+  output: 'export',
   devIndicators: {
     position: 'bottom-right',
   },

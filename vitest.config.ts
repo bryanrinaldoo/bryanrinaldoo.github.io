@@ -13,6 +13,7 @@ export default defineConfig({
       include: ['src/**/*'],
       exclude: ['src/**/*.stories.{js,jsx,ts,tsx}'],
     },
+    passWithNoTests: true,
     projects: [
       {
         extends: true,
