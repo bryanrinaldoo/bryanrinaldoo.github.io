@@ -10,14 +10,13 @@
     "hero_title": "Turning business problems into working software.",
     "hero_intro": "I design and build end-to-end solutions across frontends, APIs, databases and integrations, working closely with clients to fit the way their business already runs.",
     "hero_cta_email": "Email me",
-    "hero_cta_linkedin": "LinkedIn",
     "about_title": "Bridging business needs and technical delivery.",
-    "about_body": "I work with clients to understand their processes, spot where technology can help, and turn complex requirements into practical solutions. I enjoy solution design, and I care about how technology changes the way a business operates.",
+    "about_body": "I turn messy business problems into software people actually enjoy using, building everything from the screens they click to the systems running behind them.",
     "experience_title": "Where I have worked.",
     "masa_role": "Software engineer",
-    "masa_b1": "Build and maintain a fleet management platform tracking nearly 600 units live, with Python, FastAPI, PostgreSQL, Redis, React and Next.js.",
-    "masa_b2": "Independently drive two client-facing commodity trading applications, from feature design to deployment.",
-    "masa_b3": "Simplify manual workflows with file-based ingestion and calculations triggered by shipment approval.",
+    "masa_b1": "Design and build backend services, RESTful APIs, database structures and third-party integrations with Python, FastAPI, PostgreSQL and Redis.",
+    "masa_b2": "Build React, Next.js and TypeScript frontends with live WebSocket tracking, and tune rendering so the interface stays fast as data grows.",
+    "masa_b3": "Independently drive two client-facing commodity trading applications, from feature design through testing and iteration.",
     "akhdani_role": "Frontend developer",
     "akhdani_b1": "Re-engineered a React app, fixed bugs and shipped new features from Figma designs and API docs.",
     "kompas_role": "Frontend development intern",
@@ -36,6 +35,11 @@
     "cta_title": "Let's build something useful.",
     "cta_body": "Have a project or a role in mind? Send me a message.",
     "footer_text": "© {year} {name}",
-    "footer_email": "Email"
+    "footer_email": "Email",
+    "cta_contact": "Contact me",
+    "masa_current": "Current role",
+    "masa_b4": "Work directly with clients to gather requirements, demo updates and turn business problems into end-to-end solutions.",
+    "masa_b5": "Simplify manual workflows with file-based data ingestion and calculations triggered automatically on shipment approval.",
+    "about_availability": "Open to remote collaboration and happy to relocate."
   }
 }

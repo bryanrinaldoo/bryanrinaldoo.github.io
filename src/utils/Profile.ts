@@ -4,13 +4,22 @@ export const PROFILE = {
   linkedin: 'https://www.linkedin.com/in/bryanrinaldoo/',
   github: 'https://github.com/bryanrinaldoo',
   skills: ['TypeScript', 'React', 'Next.js', 'Python', 'FastAPI', 'PostgreSQL', 'Redis', 'Docker'],
+  currentJob: {
+    company: 'Masa AI',
+    period: 'Apr 2023 - Present',
+    bullets: ['masa_b1', 'masa_b2', 'masa_b3', 'masa_b4', 'masa_b5'],
+    stack: [
+      'Python',
+      'FastAPI',
+      'PostgreSQL',
+      'Redis',
+      'React',
+      'Next.js',
+      'TypeScript',
+      'WebSockets',
+    ],
+  },
   experience: [
-    {
-      key: 'masa',
-      company: 'Masa AI',
-      period: 'Apr 2023 - Present',
-      bullets: ['masa_b1', 'masa_b2', 'masa_b3'],
-    },
     {
       key: 'akhdani',
       company: 'Akhdani Reka Solusi',

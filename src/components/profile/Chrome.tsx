@@ -1,6 +1,8 @@
 import { getTranslations } from 'next-intl/server';
 import Link from 'next/link';
 import { PROFILE } from '@/utils/Profile';
+import { SmoothScrollLink } from './SmoothScrollLink';
+import { StarLink } from './StarLink';
 
 const navLinks = ['about', 'experience', 'projects', 'contact'] as const;
 
@@ -10,27 +12,35 @@ export async function TopNav() {
   return (
     <header className="sticky top-0 z-50 border-b border-hairline-soft bg-white/90 backdrop-blur">
       <div className="mx-auto flex h-16 max-w-[1200px] items-center justify-between px-6">
-        <Link href="/" className="display text-lg text-ink">
+        <Link
+          href="/"
+          className="display text-lg text-ink transition-transform duration-300 hover:scale-105"
+        >
           {PROFILE.name}
         </Link>
         <nav className="hidden gap-1 rounded-full bg-surface-soft p-1.5 md:flex">
           {navLinks.map((link) => (
-            <a
+            <SmoothScrollLink
               key={link}
               href={`#${link}`}
-              className="rounded-full px-3.5 py-1.5 text-sm font-medium text-muted"
+              className="group relative rounded-full px-3.5 py-1.5 text-sm font-medium text-muted transition-all duration-300 hover:-translate-y-0.5 hover:bg-white hover:text-ink hover:shadow-[0_4px_12px_rgba(0,0,0,0.08)] active:scale-95"
             >
               {t(`nav_${link}`)}
-            </a>
+              <span className="absolute inset-x-3.5 bottom-1 h-px origin-left scale-x-0 bg-ink transition-transform duration-300 group-hover:scale-x-100" />
+            </SmoothScrollLink>
           ))}
         </nav>
-        <a
-          href={`mailto:${PROFILE.email}`}
-          className="inline-flex h-10 items-center rounded-md bg-primary px-5 text-sm font-semibold text-white active:bg-primary-active"
+        <StarLink
+          href={PROFILE.linkedin}
+          className="inline-flex h-10 items-center rounded-md bg-primary px-5 text-sm font-semibold text-white transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_4px_12px_rgba(0,0,0,0.2)] active:bg-primary-active"
         >
-          {t('hero_cta_email')}
-        </a>
+          {t('cta_contact')}
+        </StarLink>
       </div>
+      <div
+        aria-hidden
+        className="scroll-progress absolute inset-x-0 bottom-0 h-0.5 origin-left bg-ink"
+      />
     </header>
   );
 }

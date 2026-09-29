@@ -1,5 +1,7 @@
 import { getTranslations } from 'next-intl/server';
 import { PROFILE } from '@/utils/Profile';
+import { HeroCanvas } from './HeroCanvas';
+import { StarLink } from './StarLink';
 
 // Floating skill pills at different scroll speeds create the parallax depth
 const floaters = [
@@ -41,13 +43,14 @@ export async function Hero() {
 
   return (
     <section className="relative flex min-h-[calc(100vh-64px)] items-center overflow-hidden">
+      <HeroCanvas />
       <div
         aria-hidden
-        className="parallax-slow pointer-events-none absolute -top-24 -right-24 size-[420px] rounded-full bg-badge-violet/15 blur-3xl"
+        className="parallax-slow pointer-events-none absolute -top-24 -right-24 size-105 rounded-full bg-badge-violet/15 blur-3xl"
       />
       <div
         aria-hidden
-        className="parallax-fast pointer-events-none absolute top-64 -left-32 size-[360px] rounded-full bg-badge-emerald/20 blur-3xl"
+        className="parallax-fast pointer-events-none absolute top-64 -left-32 size-90 rounded-full bg-badge-emerald/20 blur-3xl"
       />
 
       {floaters.map((item) => (
@@ -73,20 +76,12 @@ export async function Hero() {
           {t('hero_intro')}
         </p>
         <div className="fade-up mt-8 flex flex-wrap justify-center gap-3 [animation-delay:270ms]">
-          <a
-            href={`mailto:${PROFILE.email}`}
-            className="inline-flex h-10 items-center rounded-md bg-primary px-5 text-sm font-semibold text-white active:bg-primary-active"
-          >
-            {t('hero_cta_email')}
-          </a>
-          <a
+          <StarLink
             href={PROFILE.linkedin}
-            target="_blank"
-            rel="noreferrer noopener"
-            className="inline-flex h-10 items-center rounded-md border border-hairline bg-white px-5 text-sm font-semibold text-ink"
+            className="inline-flex h-11 items-center rounded-md bg-primary px-6 text-sm font-semibold text-white transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_4px_12px_rgba(0,0,0,0.2)] active:bg-primary-active"
           >
-            {t('hero_cta_linkedin')}
-          </a>
+            {t('cta_contact')}
+          </StarLink>
         </div>
       </div>
     </section>

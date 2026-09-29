@@ -30,10 +30,6 @@
   --radius-xl: 16px;
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
 /* Display headline: Inter 600 with tight tracking (Cal Sans substitute, see DESIGN.md) */
 .display {
   font-weight: 600;
@@ -72,18 +68,67 @@ html {
   }
 }
 
-@media (prefers-reduced-motion: no-preference) {
+@keyframes word-light {
+  from {
+    opacity: 0.15;
+  }
+}
+
+@keyframes chip-pop {
+  from {
+    opacity: 0;
+    transform: translateY(16px) scale(0.6);
+  }
+
+  70% {
+    transform: translateY(-4px) scale(1.08);
+  }
+}
+
+@keyframes grow-x {
+  from {
+    transform: scaleX(0);
+  }
+}
+
+/* Layered so Tailwind utilities (e.g. animation-delay) can override.
+   Motion is intentional for every visitor, so it ignores prefers-reduced-motion. */
+@layer components {
   .fade-up {
     animation: fade-up 0.7s cubic-bezier(0.2, 0.7, 0.2, 1) both;
-    animation-delay: calc(var(--i, 0) * 90ms);
   }
 
   .pulse-dot {
     animation: pulse-dot 1.6s ease-in-out infinite;
   }
 
+  .scroll-progress {
+    display: none;
+  }
+
   /* Scroll-driven effects; static when unsupported */
   @supports (animation-timeline: view()) {
+    .scroll-progress {
+      display: block;
+      animation: grow-x linear both;
+      animation-timeline: scroll(root);
+    }
+
+    /* Pinned About panel: words light up, then chips pop in, as the section scrolls */
+    .about-track {
+      view-timeline-name: --about;
+    }
+
+    .about-word {
+      animation: word-light linear both;
+      animation-timeline: --about;
+    }
+
+    .about-chip {
+      animation: chip-pop linear both;
+      animation-timeline: --about;
+    }
+
     .reveal {
       animation: fade-up linear both;
       animation-timeline: view();
