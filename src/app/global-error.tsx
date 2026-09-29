@@ -1,15 +1,9 @@
 'use client';
 
-import * as Sentry from '@sentry/nextjs';
 import NextError from 'next/error';
-import { useEffect } from 'react';
 import { AppConfig } from '@/utils/AppConfig';
 
-export default function GlobalError(props: { error: Error & { digest?: string } }) {
-  useEffect(() => {
-    Sentry.captureException(props.error);
-  }, [props.error]);
-
+export default function GlobalError() {
   return (
     <html lang={AppConfig.i18n.defaultLocale}>
       <body>

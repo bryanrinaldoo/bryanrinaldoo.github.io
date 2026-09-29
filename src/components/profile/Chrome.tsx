@@ -1,4 +1,5 @@
 import { getTranslations } from 'next-intl/server';
+import Image from 'next/image';
 import Link from 'next/link';
 import { PROFILE } from '@/utils/Profile';
 import { SmoothScrollLink } from './SmoothScrollLink';
@@ -14,8 +15,16 @@ export async function TopNav() {
       <div className="mx-auto flex h-16 max-w-[1200px] items-center justify-between px-6">
         <Link
           href="/"
-          className="display text-lg text-ink transition-transform duration-300 hover:scale-105"
+          className="display inline-flex items-center gap-2 text-lg text-ink transition-transform duration-300 hover:scale-105"
         >
+          <Image
+            src="/favicon.svg"
+            alt=""
+            width={28}
+            height={28}
+            unoptimized
+            className="size-7 transition-transform duration-500 hover:rotate-[-12deg]"
+          />
           {PROFILE.name}
         </Link>
         <nav className="hidden gap-1 rounded-full bg-surface-soft p-1.5 md:flex">
@@ -51,7 +60,17 @@ export async function Footer() {
   return (
     <footer className="bg-surface-dark px-6 py-16 text-sm text-on-dark-soft">
       <div className="mx-auto flex max-w-[1200px] flex-col justify-between gap-6 md:flex-row">
-        <p>{t('footer_text', { year: new Date().getFullYear(), name: PROFILE.name })}</p>
+        <p className="inline-flex items-center gap-2">
+          <Image
+            src="/favicon.svg"
+            alt=""
+            width={20}
+            height={20}
+            unoptimized
+            className="size-5 opacity-70"
+          />
+          {t('footer_text', { year: new Date().getFullYear(), name: PROFILE.name })}
+        </p>
         <div className="flex gap-6">
           <a href={PROFILE.github} target="_blank" rel="noreferrer noopener">
             GitHub
