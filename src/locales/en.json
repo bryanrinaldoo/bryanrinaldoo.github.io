@@ -1,78 +1,41 @@
 {
-  "RootLayout": {
-    "home_link": "Home",
-    "about_link": "About",
-    "counter_link": "Counter",
-    "portfolio_link": "Portfolio",
-    "sign_in_link": "Sign in",
-    "sign_up_link": "Sign up"
-  },
-  "BaseTemplate": {
-    "description": "Starter code for your Nextjs Boilerplate with Tailwind CSS",
-    "footer_text": "© {year} {name}. Made with <author></author>.",
-    "main_navigation_label": "Main navigation"
-  },
   "Index": {
-    "meta_title": "Next.js Boilerplate Presentation",
-    "meta_description": "Next js Boilerplate is the perfect starter code for your project. Build your React application with the Next.js framework.",
-    "sponsors_title": "Sponsors",
-    "zap_emoji_label": "Zap"
-  },
-  "Counter": {
-    "meta_title": "Counter",
-    "meta_description": "An example of DB operation",
-    "security_powered_by": "Security, bot detection and rate limiting powered by"
-  },
-  "CounterForm": {
-    "presentation": "The counter is stored in the database and incremented by the value you provide.",
-    "label_increment": "Increment by",
-    "button_increment": "Increment",
-    "error_increment_range": "Value must be between 1 and 3"
-  },
-  "CurrentCount": {
-    "count": "Count: {count}"
-  },
-  "About": {
-    "meta_title": "About",
-    "meta_description": "About page description",
-    "about_paragraph": "Welcome to our About page! We are a team of passionate individuals dedicated to creating amazing software.",
-    "translation_powered_by": "Translation powered by"
-  },
-  "Portfolio": {
-    "meta_title": "Portfolio",
-    "meta_description": "Welcome to my portfolio page!",
-    "presentation": "Welcome to my portfolio page! Here you will find a carefully curated collection of my work and accomplishments. Through this portfolio, I'm to showcase my expertise, creativity, and the value I can bring to your projects.",
-    "portfolio_name": "Portfolio {name}",
-    "error_reporting_powered_by": "Error reporting powered by"
-  },
-  "PortfolioSlug": {
-    "meta_title": "Portfolio {slug}",
-    "meta_description": "Portfolio {slug} description",
-    "header": "Portfolio {slug}",
-    "content": "Created a set of promotional materials and branding elements for a corporate event. Crafted a visually unified theme, encompassing a logo, posters, banners, and digital assets. Integrated the client's brand identity while infusing it with a contemporary and innovative approach.",
-    "code_review_powered_by": "Code review powered by"
-  },
-  "SignIn": {
-    "meta_title": "Sign in",
-    "meta_description": "Seamlessly sign in to your account with our user-friendly login process."
-  },
-  "SignUp": {
-    "meta_title": "Sign up",
-    "meta_description": "Effortlessly create an account through our intuitive sign-up process."
-  },
-  "Dashboard": {
-    "hello_message": "Hello {email}!",
-    "alternative_message": "Need advanced features? Multi-tenancy & Teams, Roles & Permissions, Shadcn UI, End-to-End Typesafety with oRPC, Stripe Payment, Light / Dark mode. Try <url></url>.",
-    "max_message": "Or, need a Self-hosted auth stack (Better Auth)? Try <url></url>."
-  },
-  "DashboardLayout": {
-    "meta_title": "Dashboard",
-    "meta_description": "Manage your account from the dashboard.",
-    "dashboard_link": "Dashboard",
-    "user_profile_link": "Manage your account",
-    "sign_out": "Sign out"
-  },
-  "LocaleSwitcher": {
-    "change_language": "Change language"
+    "meta_title": "Bryan Rinaldo - Software engineer",
+    "meta_description": "Software engineer in Jakarta who turns business requirements into end-to-end solutions across apps, APIs and databases.",
+    "nav_about": "About",
+    "nav_experience": "Experience",
+    "nav_projects": "Projects",
+    "nav_contact": "Contact",
+    "hero_badge": "Software engineer at Masa AI · Jakarta",
+    "hero_title": "Turning business problems into working software.",
+    "hero_intro": "I design and build end-to-end solutions across frontends, APIs, databases and integrations, working closely with clients to fit the way their business already runs.",
+    "hero_cta_email": "Email me",
+    "hero_cta_linkedin": "LinkedIn",
+    "about_title": "Bridging business needs and technical delivery.",
+    "about_body": "I work with clients to understand their processes, spot where technology can help, and turn complex requirements into practical solutions. I enjoy solution design, and I care about how technology changes the way a business operates.",
+    "experience_title": "Where I have worked.",
+    "masa_role": "Software engineer",
+    "masa_b1": "Build and maintain a fleet management platform tracking nearly 600 units live, with Python, FastAPI, PostgreSQL, Redis, React and Next.js.",
+    "masa_b2": "Independently drive two client-facing commodity trading applications, from feature design to deployment.",
+    "masa_b3": "Simplify manual workflows with file-based ingestion and calculations triggered by shipment approval.",
+    "akhdani_role": "Frontend developer",
+    "akhdani_b1": "Re-engineered a React app, fixed bugs and shipped new features from Figma designs and API docs.",
+    "kompas_role": "Frontend development intern",
+    "kompas_b1": "Worked on the Tutur Visual project using Vue.js.",
+    "kompas_b2": "Proposed ideas and proofs of concept from user and developer perspectives.",
+    "projects_title": "Things I have built.",
+    "project_twice": "Fan website built for a Dicoding assignment.",
+    "project_bookshelf": "Web app to manage your books.",
+    "project_movie": "Movie browsing web app.",
+    "project_todo": "Simple to-do app.",
+    "project_email": "Python script for automated email.",
+    "education_title": "Education",
+    "education_degree": "Bachelor of informatics engineering, 2019 - 2023",
+    "education_school": "Bandung Institute of Technology",
+    "award_title": "Beasiswa Luar Biasa (BLB 6) scholarship grantee, 2020 - 2021",
+    "cta_title": "Let's build something useful.",
+    "cta_body": "Have a project or a role in mind? Send me a message.",
+    "footer_text": "© {year} {name}",
+    "footer_email": "Email"
   }
 }
